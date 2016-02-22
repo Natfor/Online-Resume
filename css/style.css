@@ -1,0 +1,267 @@
+/*General*/
+.flex-box {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
+}
+
+.clear-fix {
+	overflow: auto;
+}
+
+.center-content {
+	padding: 2.5% 5%;
+}
+
+/***tag styling***/
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding:0;
+	margin:0;
+	font-family: "Roboto", sans-serif;
+}
+
+h1 {
+	font-size: 60px;
+	color: #b3b3b3;
+	line-height: 48px;
+	display: inline;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 24px;
+	color: #331229;
+	line-height: 29px;
+	padding: 10px;
+}
+
+h3 {
+	font-style: italic;
+	font-size: 20px;
+	color: #000;
+	line-height: 22px;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 14px;
+	color: #4a4a4a;
+	line-height: 17px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+	padding:10px 5%;
+
+}
+
+p {
+	font-size: 14px;
+	color: #331229;
+	line-height: 21px;
+	margin: 10px 0 30px 0;
+	overflow: inherit;
+}
+
+a {
+	color: #331229;
+	text-decoration: none;
+	margin-top: 10px;
+	display: block;
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	padding: 10px;
+}
+
+span {
+	padding: 5px;
+}
+.education-entry,
+.work-entry,
+.project-entry {
+	padding: 0 5%;
+}
+
+#workExperience, #education, .connect-line{
+	background-color: #b3b3b3;
+}
+
+#skillsDiv, #projects, #mapDiv{
+	background-color:#6b6a40;
+	padding: 0 0 30px 0;
+}
+
+#skills-h3 {
+	color: #331229;
+	display: none;
+}
+
+.date-text {
+	font-style: italic;
+	font-size: 14px;
+	color: #efeded;
+	line-height: 16px;
+	float: left;
+}
+
+.location-text {
+	font-style: italic;
+	font-size: 14px;
+	color: #efeded;
+	line-height: 16px;
+	float: right;
+
+}
+
+.project-a{
+	color: #b3b3b3;
+}
+
+.welcome-message {
+	font-style: italic;
+	font-size: 18px;
+	color: #b3b3b3;
+	line-height: 28px;
+}
+
+
+
+#role{
+	color:#fff;
+}
+
+.orange-text {
+	color: #f5ae23;
+}
+
+.white-text {
+	font-weight: bold;
+	color: #fff;
+}
+
+.skills-text{
+	font-weight: bold;
+	color: #b3b3b3;
+}
+
+.gray {
+	background-color: #f3f3f3;
+	padding-bottom: 10px;
+	clear:both;
+}
+
+.project-images{
+		max-width: 400px;
+		margin-bottom: 30px;
+}
+
+#header, .footer-background{
+	background-color: #331229;
+}
+
+.biopic {
+	float: left;
+	padding: 10px;
+	width: 200px;
+	display: none;
+}
+
+#map {
+	display: block;
+	height: 100%;
+	margin: 0 5%;
+}
+
+#mapDiv {
+	height: 400px;
+	width: 100%;
+	padding-bottom: 5%;
+}
+
+#lets-connect {
+	text-align: center;
+}
+
+/* Media queries to handle various device widths */
+
+@media only screen and (max-width: 1024px) {
+	#lets-connect {
+		padding-top: 5%;
+	}
+	#mapDiv{
+		padding-bottom: 10%;
+	}
+}
+
+@media only screen and (max-width:900px) {
+	.biopic {
+		width: 175px;
+	}
+	.location-text{
+		margin-left: 10px;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.biopic {
+		width: 150px;
+	}
+	.welcome-message {
+		display: none;
+	}
+	p{
+		margin-top:20px;
+	}
+	h1{
+		font-size: 50px;
+	}
+	.project-images{
+		max-width: 300px;
+	}
+	#mapDiv{
+		padding-bottom: 15%;
+	}
+}
+
+@media only screen and (max-width: 500px){
+	.location-text, .date-text{
+		float: none;
+		margin: 0;
+	}
+	.flex-box{
+		justify-content: flex-start;
+	}
+	.project-images{
+		max-width: 250px;
+	}
+	#mapDiv{
+		padding-bottom: 28%;
+	}
+}
+
+@media only screen and (min-width: 750px) {
+	#skills-h3,
+	.biopic {
+		display: block;
+	}
+}
