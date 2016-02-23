@@ -7,15 +7,14 @@ var bio = {
 			"mobile": "5491132085089",
 			"email": "nataforno@gmail.com",
 			"github": "natfor",
-			"twitter": "not on twitter",
 			"location": "Buenos Aires, Argentina"
 		}
 	],
-	"welcomeMessage": "Welcome to my online resume",
+	"welcome": "Welcome to my online resume",
 	"skills": [
 		"programming", "fast learning", "communication", "collaboration", "design", "problem solving"
 	],
-	"biopic": "images/natalia.jpg"
+	"picture": "images/natalia.jpg"
 };
 
 var work = {
@@ -69,35 +68,35 @@ var projects = {
 			"title" : "Online Potfolio",
 			"dates" : "October 2015",
 			"description" : "Udacity's Fornt End Developer Nanodegree project 1",
-			"images": "images/Natfor_logo.svg",
+			"image": "images/Natfor_logo.svg",
 			"url": "https://github.com/Natfor/Natalia-Forno-Portfolio"
 		},
 		{
 			"title" : "Arcade Game",
 			"dates" : "Coming soon",
 			"description" : "Udacity's Fornt End Developer Nanodegree project 3",
-			"images": "images/arcade_game.svg",
+			"image": "images/arcade_game.svg",
 			"url": "https://github.com/Natfor/Classic-Arcade-Game"
 		},
 		{
 			"title" : "Website Optimization",
 			"dates" : "Coming soon",
 			"description" : "Udacity's Fornt End Developer Nanodegree project 4",
-			"images": "images/main_image_min.png",
+			"image": "images/main_image_min.png",
 			"url": "https://github.com/Natfor/Website-Optimization"
 		},
 		{
 			"title" : "Neighborhood Map",
 			"dates" : "Coming soon",
 			"description" : "Udacity's Fornt End Developer Nanodegree project 5-1",
-			"images": "images/bsas_map.png",
+			"image": "images/bsas_map.png",
 			"url": "https://github.com/Natfor/Neighborhood-Map"
 		},
 		{
 			"title" : "Health Tracker",
 			"dates" : "Coming soon",
 			"description" : "Udacity's Fornt End Developer Nanodegree project 5-2",
-			"images": "images/health_tracker.jpg",
+			"image": "images/health_tracker.jpg",
 			"url": "https://github.com/Natfor/Health-Tracker"
 		}
 
@@ -112,7 +111,6 @@ var education = {
 			"name" : "School of Multimedial Arts, Da Vinci",
 			"location" : "Buenos Aires, Argentina",
 			"degree" : "Video Game Design  (Half of the career completed)",
-			"majors" : "Video game development and design",
 			"dates" : "March 2010 - November 2011",
 			"url" : "https://www.davinci.edu.ar/cursos/formacion/game-design"
 		},
@@ -120,7 +118,6 @@ var education = {
 			"name" : "Education IT",
 			"location" : "Buenos Aires, Argentina",
 			"degree" : "Web programming - Course",
-			"majors" : "Php, JavaScript, HTML",
 			"dates" : "October 2012 - May 2013",
 			"url" : "http://www.educacionit.com/carrera-prog-web"
 		},
@@ -128,7 +125,6 @@ var education = {
 			"name" : "School of Multimedial Arts, Da Vinci",
 			"location" : "Buenos Aires, Argentina",
 			"degree" : "Web Design - Course",
-			"majors" : "Web design",
 			"dates" : "March 2012 - June 2012",
 			"url" : "https://www.davinci.edu.ar/cursos/formacion/diseno-y-maquetado-web-y-mobile"
 		}
@@ -137,8 +133,9 @@ var education = {
 		{
 			"title" : "Front-End Development Nanodegree",
 			"school" : "Udacity",
-			"date" : "May 2015 - present",
-			"url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+			"dates" : "May 2015 - present",
+			"courseUrl" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
+			"schoolUrl": "https://www.udacity.com"
 		}
 	]
 };
@@ -149,8 +146,8 @@ bio.display = function(){
 //Header
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-	var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	var formattedPic = HTMLbioPic.replace("%data%", bio.picture);
+	var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcome);
 
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
@@ -161,24 +158,23 @@ bio.display = function(){
 	var contactarray = [];
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[0].mobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts[0].email);
-	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts[0].twitter);
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts[0].github);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts[0].location);
-	contactarray.push(formattedMobile, formattedEmail, formattedTwitter,  formattedGithub, formattedLocation);
+	contactarray.push(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 
 
 	for(var i = 0; i<contactarray.length; i++){
 		$("#topContacts").append(contactarray[i]);
 		$("#footerContacts").append(contactarray[i]);
-	}
+	};
 
 //Skills
 	$("#skillsDiv").append(HTMLskillsStart);
-	for(var j=0; j<bio.skills.length; j++){
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[j]);
+	for(var i=0; i<bio.skills.length; i++){
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
 		$("#skills").append(formattedSkill);
 		console.log(formattedSkill);
-	}
+	};
 };
 
 bio.display();
@@ -193,7 +189,7 @@ work.jobs.forEach(function(job){
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer).replace("#", job.url);
 	$(".work-entry").append(formattedEmployer);
 
-	var formattedTitle = HTMLprojectTitle.replace("%data%", job.title).replace("#", job.url);
+	var formattedTitle = HTMLprojectTitle.replace("%data%", job.title).replace("#", job.url);;
 	$(".work-entry").append(formattedTitle);
 
 	var formattedDates = HTMLworkDates.replace("%data%", job.dates);
@@ -204,7 +200,7 @@ work.jobs.forEach(function(job){
 
 	var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
 	$(".work-entry").append(formattedDescription);
- });
+ })
 };
 work.display();
 
@@ -224,10 +220,10 @@ projects.display = function(){
 		var fomattedDescription = HTMLprojectDescription.replace("%data%", project.description);
 		$(".project-entry").append(fomattedDescription);
 
-		var fomattedImage = HTMLprojectImage.replace("%data%", project.images);
+		var fomattedImage = HTMLprojectImage.replace("%data%", project.image);
 		$(".project-entry").append(fomattedImage);
 
- });
+ })
 };
 projects.display();
 
@@ -240,18 +236,17 @@ education.display = function(){
 		var formattedName = HTMLschoolName.replace("%data%", school.name).replace("#", school.url);
 		$(".education-entry").append(formattedName);
 
-		var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree).replace("#", school.url);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree).replace("#", school.url);;
 		$(".education-entry").append(formattedDegree);
-
-		var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
-		$(".education-entry").append(formattedMajor);
 
 		var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
 		$(".education-entry").append(formattedDates);
 
 		var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
 		$(".education-entry").append(formattedLocation);
- });
+		var formattedMajor = HTMLschoolMajor.replace("%data%", "");
+		$(".education-entry").append(formattedMajor);
+ })
 
 	$(".education-entry").append(HTMLonlineClasses);
 
@@ -259,20 +254,21 @@ education.display = function(){
 		var formattedTitle = HTMLonlineTitle.replace("%data%", course.title).replace("#", course.courseUrl);
 		$(".education-entry").append(formattedTitle);
 
-		var formattedSchool = HTMLonlineSchool.replace("%data%", course.school).replace("#", course.url);
+		var formattedSchool = HTMLonlineSchool.replace("%data%", course.school).replace("#", course.courseUrl);
 		$(".education-entry").append(formattedSchool);
 
-		var formattedDate = HTMLonlineDates.replace("%data%", course.date);
-		$(".education-entry").append(formattedDate);
+		var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
+		$(".education-entry").append(formattedDates);
 
-		var formattedUrl = HTMLonlineURL.replace("%data%", course.url).replace("#", course.url);
+		var formattedUrl = HTMLonlineURL.replace("%data%", course.schoolUrl).replace("#", course.schoolUrl);
 		$(".education-entry").append(formattedUrl);
-	});
+	})
 };
 education.display();
 
 
 //Internationalize button
+//OTHER
 $('#lets-connect').append(internationalizeButton);
 
 function inName(){
