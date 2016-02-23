@@ -31,28 +31,28 @@ var HTMLskills = '<li class="flex-item"><span class="skills-text">%data%</span><
 
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a target="_blank" href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
+var HTMLworkEmployer = '<a class="object-title" target="_blank" href="#">%data%</a>';
+var HTMLworkTitle = '<a class="object-subtitle" target="_blank" href="#"> %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a target="_blank" href="#">%data%</a>';
+var HTMLprojectTitle = '<a class="object-title" target="_blank" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p class="project-p"><br>%data%</p>';
 var HTMLprojectImage = '<img class="project-images" src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a target="_blank" href="#">%data%</a>';
-var HTMLschoolDegree = '<a target="_blank" href="#">%data%</a>';
+var HTMLschoolName = '<a class="object-title" target="_blank" href="#">%data%</a>';
+var HTMLschoolDegree = '<a class="object-subtitle" target="_blank" href="#">%data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<div><br> %data%</div>';
+var HTMLschoolMajor = '<div class="major"> %data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a target="_blank" href="#">%data%</a>';
-var HTMLonlineSchool = '<a target="_blank" %data%</a>';
+var HTMLonlineTitle = '<a class="object-title" target="_blank" href="#">%data%</a>';
+var HTMLonlineSchool = '<a class="object-subtitle" target="_blank" %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a target="_blank" href="#">%data%</a>';
 
